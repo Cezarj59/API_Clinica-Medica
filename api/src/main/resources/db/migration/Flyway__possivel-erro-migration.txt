@@ -2,3 +2,10 @@ Caso a migration esteja com algum erro ou tenha sido modificade sem o projeto se
 precisa entrar no banco de dados e executar o seguinte comando para correção:
 
 delete from flyway_schema_history where success = 0;
+
+Pode acontecer de alguma migration ter criado uma tabela e/ou colunas e com isso o problema vai persistir,
+pois o flyway não vai apagar as tabelas/colunas criadas em migrations que falharam.
+Nesse caso você pode apagar o banco de dados e criá-lo novamente:
+
+drop database vollmed_api;
+create database vollmed_api;
