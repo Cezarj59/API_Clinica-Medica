@@ -1,0 +1,4 @@
+Caso a migration esteja com algum erro ou tenha sido modificade sem o projeto ser parado,
+precisa entrar no banco de dados e executar o seguinte comando para correção:
+
+delete from flyway_schema_history where success = 0;
